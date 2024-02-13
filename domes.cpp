@@ -17,6 +17,8 @@ template<class T>
 struct Point {
     typedef Point P;
     T x, y;
+    Point(): x(0), y(0) {}
+    Point(T _x, T _y): x(_x), y(_y) {}
     bool operator<(P p) const { return tie(x,y) < tie(p.x,p.y); }
     bool operator==(P p) const { return tie(x,y)==tie(p.x,p.y); }
     P operator+(P p) const { return P(x+p.x, y+p.y); }
